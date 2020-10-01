@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
@@ -19,10 +20,14 @@ import com.beingdev.magicprint.prodcutscategory.Tshirts;
 import com.beingdev.magicprint.usersession.UserSession;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
+import com.getkeepsafe.taptargetview.TapTarget;
+import com.getkeepsafe.taptargetview.TapTargetSequence;
 import com.mikepenz.crossfadedrawerlayout.view.CrossfadeDrawerLayout;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import es.dmoral.toasty.Toasty;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,54 +66,54 @@ public class MainActivity extends AppCompatActivity {
 
         if (session.getFirstTime()) {
             //tap target view
-//            tapview();
+            tapview();
             session.setFirstTime(false);
         }
     }
 
-   /* private void tapview() {
+    private void tapview() {
 
-            new TapTargetSequence(this)
-                    .targets(
-                            TapTarget.forView(findViewById(R.id.notifintro), "Notifications", "Latest offers will be available here !")
-                                    .targetCircleColor(R.color.colorAccent)
-                                    .titleTextColor(R.color.colorAccent)
-                                    .titleTextSize(25)
-                                    .descriptionTextSize(15)
-                                    .descriptionTextColor(R.color.accent)
-                                    .drawShadow(true)                   // Whether to draw a drop shadow or not
+        new TapTargetSequence(this)
+                .targets(
+                        TapTarget.forView(findViewById(R.id.notifintro), "Notifications", "Latest offers will be available here !")
+                                .targetCircleColor(R.color.colorAccent)
+                                .titleTextColor(R.color.colorAccent)
+                                .titleTextSize(25)
+                                .descriptionTextSize(15)
+                                .descriptionTextColor(R.color.colorAccent)
+                                .drawShadow(true)                   // Whether to draw a drop shadow or not
                                     .cancelable(false)                  // Whether tapping outside the outer circle dismisses the view
                                     .tintTarget(true)
                                     .transparentTarget(true)
                                     .outerCircleColor(R.color.first),
-                            TapTarget.forView(findViewById(R.id.view_profile), "Profile", "You can view and edit your profile here !")
-                                    .targetCircleColor(R.color.colorAccent)
-                                    .titleTextColor(R.color.colorAccent)
-                                    .titleTextSize(25)
-                                    .descriptionTextSize(15)
-                                    .descriptionTextColor(R.color.accent)
+                        TapTarget.forView(findViewById(R.id.view_profile), "Profile", "You can view and edit your profile here !")
+                                .targetCircleColor(R.color.colorAccent)
+                                .titleTextColor(R.color.colorAccent)
+                                .titleTextSize(25)
+                                .descriptionTextSize(15)
+                                .descriptionTextColor(R.color.colorAccent)
                                     .drawShadow(true)                   // Whether to draw a drop shadow or not
                                     .cancelable(false)                  // Whether tapping outside the outer circle dismisses the view
                                     .tintTarget(true)
                                     .transparentTarget(true)
                                     .outerCircleColor(R.color.third),
-                            TapTarget.forView(findViewById(R.id.cart), "Your Cart", "Here is Shortcut to your cart !")
-                                    .targetCircleColor(R.color.colorAccent)
-                                    .titleTextColor(R.color.colorAccent)
-                                    .titleTextSize(25)
-                                    .descriptionTextSize(15)
-                                    .descriptionTextColor(R.color.accent)
+                        TapTarget.forView(findViewById(R.id.cart), "Your Cart", "Here is Shortcut to your cart !")
+                                .targetCircleColor(R.color.colorAccent)
+                                .titleTextColor(R.color.colorAccent)
+                                .titleTextSize(25)
+                                .descriptionTextSize(15)
+                                .descriptionTextColor(R.color.colorAccent)
                                     .drawShadow(true)
                                     .cancelable(false)// Whether tapping outside the outer circle dismisses the view
                                     .tintTarget(true)
                                     .transparentTarget(true)
                                     .outerCircleColor(R.color.second),
-                            TapTarget.forView(findViewById(R.id.visitingcards), "Categories", "Product Categories have been listed here !")
-                                    .targetCircleColor(R.color.colorAccent)
-                                    .titleTextColor(R.color.colorAccent)
-                                    .titleTextSize(25)
-                                    .descriptionTextSize(15)
-                                    .descriptionTextColor(R.color.accent)
+                        TapTarget.forView(findViewById(R.id.visitingcards), "Categories", "Product Categories have been listed here !")
+                                .targetCircleColor(R.color.colorAccent)
+                                .titleTextColor(R.color.colorAccent)
+                                .titleTextSize(25)
+                                .descriptionTextSize(15)
+                                .descriptionTextColor(R.color.colorAccent)
                                     .drawShadow(true)
                                     .cancelable(false)// Whether tapping outside the outer circle dismisses the view
                                     .tintTarget(true)
@@ -134,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }).start();
 
-    }*/
+    }
 
 
     private void getValues() {
@@ -162,10 +167,9 @@ public class MainActivity extends AppCompatActivity {
 
         //populating Image slider
         ArrayList<String> sliderImages = new ArrayList<>();
-        sliderImages.add("https://www.printstop.co.in/images/flashgallary/large/Business_stationery_home_banner.jpg");
         sliderImages.add("https://www.printstop.co.in/images/flashgallary/large/calendar-diaries-home-banner.jpg");
         sliderImages.add("https://www.printstop.co.in/images/flashgallary/large/calendar-diaries-banner.jpg");
-        sliderImages.add("https://www.printstop.co.in/images/flashgallary/large/free-visiting-cards-home-banner.JPG");
+        sliderImages.add("https://www.printstop.co.in/images/flashgallary/large/free-visiting-cards-home-banner.jpg");
 
         for (String s : sliderImages) {
             DefaultSliderView sliderView = new DefaultSliderView(this);
