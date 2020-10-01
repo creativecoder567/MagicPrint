@@ -3,13 +3,14 @@ package com.beingdev.magicprint.prodcutscategory;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.beingdev.magicprint.Cart;
@@ -75,18 +76,22 @@ public class Cards extends AppCompatActivity {
         ) {
             @Override
             protected void populateViewHolder(final MovieViewHolder viewHolder, final GenericProductModel model, final int position) {
-                if(tv_no_item.getVisibility()== View.VISIBLE){
+                if (tv_no_item.getVisibility() == View.VISIBLE) {
                     tv_no_item.setVisibility(View.GONE);
                 }
+                model.setCardid(1);
+                model.setCardname("T-shirt");
+                model.setCarddiscription("Cotton T-shirt with full hand");
+                model.setCardprice(100);
                 viewHolder.cardname.setText(model.getCardname());
-                viewHolder.cardprice.setText("₹ "+Float.toString(model.getCardprice()));
+                viewHolder.cardprice.setText("₹ " + Float.toString(model.getCardprice()));
                 Picasso.with(Cards.this).load(model.getCardimage()).into(viewHolder.cardimage);
 
                 viewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(Cards.this,IndividualProduct.class);
-                        intent.putExtra("product",getItem(position));
+                        Intent intent = new Intent(Cards.this, IndividualProduct.class);
+                        intent.putExtra("product", getItem(position));
                         startActivity(intent);
                     }
                 });

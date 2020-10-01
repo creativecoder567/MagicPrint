@@ -2,18 +2,17 @@ package com.beingdev.magicprint;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.beingdev.magicprint.networksync.CheckInternetConnection;
 import com.beingdev.magicprint.usersession.UserSession;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
-import com.mikepenz.crossfadedrawerlayout.view.CrossfadeDrawerLayout;
-import com.mikepenz.materialdrawer.Drawer;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -21,11 +20,14 @@ import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+//import com.mikepenz.crossfadedrawerlayout.view.CrossfadeDrawerLayout;
+//import com.mikepenz.materialdrawer.Drawer;
+
 public class Profile extends AppCompatActivity {
 
-    private Drawer result;
-    private CrossfadeDrawerLayout crossfadeDrawerLayout = null;
-    private TextView tvemail,tvphone;
+    //    private Drawer result;
+//    private CrossfadeDrawerLayout crossfadeDrawerLayout = null;
+    private TextView tvemail, tvphone;
 
     private TextView namebutton;
     private CircleImageView primage;

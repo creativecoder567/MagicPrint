@@ -8,22 +8,22 @@
     android:layout_gravity="center_vertical"
     tools:context=".NotificationActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbarwrap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar1"
-        android:layout_width="fill_parent"
-        android:layout_height="58dp"
-        android:background="@color/colorAccent"
-        android:minHeight="?attr/actionBarSize">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar1"
+            android:layout_width="fill_parent"
+            android:layout_height="58dp"
+            android:background="@color/colorAccent"
+            android:minHeight="?attr/actionBarSize">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
             android:text="Notifications"/>
 
 
@@ -41,14 +41,14 @@
                 android:src="@drawable/readnotif"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="25dp"
-                android:onClick="markAsRead"/>
+                android:onClick="markAsRead" />
 
 
         </LinearLayout>
-    </android.support.v7.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
 
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
 
     <ListView

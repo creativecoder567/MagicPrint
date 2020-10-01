@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/stats"
     android:background="@color/colorAccent"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbarwrap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="fill_parent"
-        android:layout_height="58dp"
-        android:background="@color/colorAccent"
-        android:minHeight="?attr/actionBarSize">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="58dp"
+            android:background="@color/colorAccent"
+            android:minHeight="?attr/actionBarSize">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
             android:text="Profile"/>
 
 
@@ -59,12 +58,12 @@
                 android:text="Update"
                 android:textAllCaps="true"
                 android:layout_marginRight="20dp"
-                android:textColor="#1976d2"/>
+                android:textColor="#1976d2" />
 
         </LinearLayout>
 
-    </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_below="@id/toolbarwrap"
@@ -98,7 +97,6 @@
                         android:elevation="5dp"
                         android:layout_marginTop="120dp"
                         android:layout_marginLeft="30dp"
-                        app:civ_border_color="@color/md_white_1000"
                         app:civ_border_width="2dp"
                         android:src="@drawable/user"
                         android:layout_marginBottom="10dp"

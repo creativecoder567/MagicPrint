@@ -3,14 +3,11 @@ package com.beingdev.magicprint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.beingdev.magicprint.networksync.CheckInternetConnection;
 import com.beingdev.magicprint.prodcutscategory.Bags;
@@ -22,36 +19,15 @@ import com.beingdev.magicprint.prodcutscategory.Tshirts;
 import com.beingdev.magicprint.usersession.UserSession;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
-import com.getkeepsafe.taptargetview.TapTarget;
-import com.getkeepsafe.taptargetview.TapTargetSequence;
-import com.mikepenz.aboutlibraries.Libs;
-import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.crossfadedrawerlayout.view.CrossfadeDrawerLayout;
-import com.mikepenz.materialdrawer.AccountHeader;
-import com.mikepenz.materialdrawer.AccountHeaderBuilder;
-import com.mikepenz.materialdrawer.Drawer;
-import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.MiniDrawer;
-import com.mikepenz.materialdrawer.interfaces.ICrossfader;
-import com.mikepenz.materialdrawer.model.DividerDrawerItem;
-import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IProfile;
-import com.mikepenz.materialdrawer.util.DrawerUIUtils;
-import com.mikepenz.materialize.util.UIUtils;
-import com.webianks.easy_feedback.EasyFeedback;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import es.dmoral.toasty.Toasty;
-
 public class MainActivity extends AppCompatActivity {
 
     private SliderLayout sliderShow;
-    private Drawer result;
+
     private CrossfadeDrawerLayout crossfadeDrawerLayout = null;
 
 
@@ -78,19 +54,19 @@ public class MainActivity extends AppCompatActivity {
         getValues();
 
         //Navigation Drawer with toolbar
-        inflateNavDrawer();
+//        inflateNavDrawer();
 
         //ImageSLider
         inflateImageSlider();
 
         if (session.getFirstTime()) {
             //tap target view
-            tapview();
+//            tapview();
             session.setFirstTime(false);
         }
     }
 
-    private void tapview() {
+   /* private void tapview() {
 
             new TapTargetSequence(this)
                     .targets(
@@ -158,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }).start();
 
-    }
+    }*/
 
 
     private void getValues() {
@@ -201,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void inflateNavDrawer() {
+   /* private void inflateNavDrawer() {
 
         //set Custom toolbar to activity -----------------------------------------------------------
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -368,7 +344,7 @@ public class MainActivity extends AppCompatActivity {
                 return crossfadeDrawerLayout.isCrossfaded();
             }
         });
-    }
+    }*/
 
 
     @Override
@@ -380,11 +356,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (result != null && result.isDrawerOpen()) {
-            result.closeDrawer();
-        } else {
-            super.onBackPressed();
-        }
+        super.onBackPressed();
+
     }
 
     public void viewProfile(View view) {

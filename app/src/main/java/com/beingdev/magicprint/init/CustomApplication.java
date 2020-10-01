@@ -2,20 +2,16 @@ package com.beingdev.magicprint.init;
 
 import android.app.Application;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.widget.ImageView;
 
 import com.activeandroid.ActiveAndroid;
-import com.beingdev.magicprint.R;
 import com.beingdev.magicprint.notification.MyNotificationOpenedHandler;
 import com.beingdev.magicprint.notification.MyNotificationReceivedHandler;
-import com.bumptech.glide.Glide;
-import com.mikepenz.iconics.IconicsDrawable;
+import com.onesignal.OneSignal;
+
+/*import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerImageLoader;
-import com.mikepenz.materialdrawer.util.DrawerUIUtils;
-import com.onesignal.OneSignal;
+import com.mikepenz.materialdrawer.util.DrawerUIUtils;*/
 
 /**
  * Created by mikepenz on 27.03.15.
@@ -46,7 +42,7 @@ public class CustomApplication extends Application {
                 .init();
 
         //initialize and create the image loader logic
-        DrawerImageLoader.init(new AbstractDrawerImageLoader() {
+     /*   DrawerImageLoader.init(new AbstractDrawerImageLoader() {
             @Override
             public void set(ImageView imageView, Uri uri, Drawable placeholder, String tag) {
                 Glide.with(imageView.getContext()).load(uri).placeholder(placeholder).into(imageView);
@@ -75,6 +71,6 @@ public class CustomApplication extends Application {
 
                 return super.placeholder(ctx, tag);
             }
-        });
+        });*/
     }
 }

@@ -8,23 +8,22 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     tools:context="com.beingdev.magicprint.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbarwrap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:titleTextColor="@color/colorAccent"
-        android:gravity="left"
-        style="@style/CustomTheme"
-        android:background="@color/colorAccent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/colorAccent"
+            android:gravity="left"
+            android:background="@color/colorAccent">
 
-        <TextView
-            android:textColor="@color/primary"
-            android:id="@+id/appname"
+            <TextView
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/appname"
             android:textSize="28sp"
             android:gravity="start"
             android:layout_width="wrap_content"
@@ -65,13 +64,13 @@
                 android:src="@drawable/cart"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="15dp"
-                android:onClick="viewCart"/>
+                android:onClick="viewCart" />
 
         </LinearLayout>
 
-    </android.support.v7.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:scrollbars="vertical"
@@ -106,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:weightSum="10">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:onClick="cardsActivity"
                         style="@style/homegridcard"
                         card_view:cardCornerRadius="@dimen/card_album_radius">
@@ -124,33 +123,33 @@
                             <TextView
                                 android:layout_below="@id/visitingcards"
                                 android:text="Visiting Cards"
-                                style="@style/homegridtext"/>
+                                style="@style/homegridtext" />
 
                         </RelativeLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         style="@style/homegridcard"
-                    card_view:cardCornerRadius="@dimen/card_album_radius"
+                        card_view:cardCornerRadius="@dimen/card_album_radius"
                         android:onClick="tshirtActivity">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <ImageView
-                            android:id="@+id/tshirts"
-                            style="@style/homegridimage"
-                            android:src="@drawable/tshirt" />
+                            <ImageView
+                                android:id="@+id/tshirts"
+                                style="@style/homegridimage"
+                                android:src="@drawable/tshirt" />
 
-                        <TextView
-                            android:layout_below="@id/tshirts"
-                            android:text="T-Shirts"
-                            style="@style/homegridtext"/>
+                            <TextView
+                                android:layout_below="@id/tshirts"
+                                android:text="T-Shirts"
+                                style="@style/homegridtext" />
 
-                    </RelativeLayout>
-                </android.support.v7.widget.CardView>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
 
           </LinearLayout>
 
@@ -160,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:weightSum="10">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         style="@style/homegridcard"
                         card_view:cardCornerRadius="@dimen/card_album_radius"
                         android:onClick="bagsActivity">
@@ -177,33 +176,33 @@
                             <TextView
                                 android:layout_below="@id/bags"
                                 android:text="Bags"
-                                style="@style/homegridtext"/>
+                                style="@style/homegridtext" />
 
                         </RelativeLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         style="@style/homegridcard"
                         card_view:cardCornerRadius="@dimen/card_album_radius"
                         android:onClick="stationaryAcitivity">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <ImageView
-                            android:id="@+id/Stationary"
-                            style="@style/homegridimage"
-                            android:src="@drawable/pens" />
+                            <ImageView
+                                android:id="@+id/Stationary"
+                                style="@style/homegridimage"
+                                android:src="@drawable/pens" />
 
-                        <TextView
-                            android:layout_below="@id/Stationary"
-                            android:text="Stationary"
-                            style="@style/homegridtext"/>
+                            <TextView
+                                android:layout_below="@id/Stationary"
+                                android:text="Stationary"
+                                style="@style/homegridtext" />
 
-                    </RelativeLayout>
-                </android.support.v7.widget.CardView>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
@@ -213,7 +212,7 @@
                     android:layout_height="wrap_content"
                     android:weightSum="10">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         style="@style/homegridcard"
                         card_view:cardCornerRadius="@dimen/card_album_radius"
                         android:onClick="calendarsActivity">
@@ -230,33 +229,34 @@
                             <TextView
                                 android:layout_below="@id/calendars"
                                 android:text="Calendars"
-                                style="@style/homegridtext"/>
+                                style="@style/homegridtext" />
 
                         </RelativeLayout>
 
-                    </android.support.v7.widget.CardView>
-                    <android.support.v7.widget.CardView
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
                         style="@style/homegridcard"
                         card_view:cardCornerRadius="@dimen/card_album_radius"
                         android:onClick="keychainsActivity">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <ImageView
-                            android:id="@+id/keychain"
-                            style="@style/homegridimage"
-                            android:src="@drawable/keychain" />
+                            <ImageView
+                                android:id="@+id/keychain"
+                                style="@style/homegridimage"
+                                android:src="@drawable/keychain" />
 
-                        <TextView
-                            android:layout_below="@id/keychain"
-                            android:text="Keychains"
-                            style="@style/homegridtext"/>
+                            <TextView
+                                android:layout_below="@id/keychain"
+                                android:text="Keychains"
+                                style="@style/homegridtext" />
 
-                    </RelativeLayout>
+                        </RelativeLayout>
 
-                </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
