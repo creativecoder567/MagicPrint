@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidStudioProjects-MagicPrint.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidStudioProjects-MagicPrint.iml" group="MagicPrint" />
-      <module fileurl="file://$PROJECT_DIR$/MagicPrint.iml" filepath="$PROJECT_DIR$/MagicPrint.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MagicPrint-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MagicPrint-app.iml" group="MagicPrint/app" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MagicPrint.iml" filepath="$PROJECT_DIR$/.idea/MagicPrint.iml" group="MagicPrint" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="MagicPrint/app" />
     </modules>
   </component>
 </project>

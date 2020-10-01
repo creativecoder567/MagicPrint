@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        UserSession s = new UserSession(this);
+        s.createLoginSession("sarath", "sarathkfs@gmail.com", "8248472355", "");
+
         Typeface typeface = ResourcesCompat.getFont(this, R.font.blacklist);
         TextView appname = findViewById(R.id.appname);
         appname.setTypeface(typeface);

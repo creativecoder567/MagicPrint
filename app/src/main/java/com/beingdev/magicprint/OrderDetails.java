@@ -170,7 +170,7 @@ public class OrderDetails extends AppCompatActivity {
         } else if (ordernumber.getText().toString().length() < 4 || ordernumber.getText().toString().length() > 12) {
             ordernumber.setError("Number Must consist of 10 characters");
             return false;
-        } else if (orderpincode.getText().toString().length() < 6 || ordernumber.getText().toString().length() > 8){
+        } else if (orderpincode.getText().toString().length() < 6) {
             orderpincode.setError("Pincode must be of 6 digits");
             return false;
         }
