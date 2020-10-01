@@ -26,26 +26,26 @@
 
 -dontwarn org.apache.**
 
--keep class org.apache.http.**
-
--keep interface org.apache.http.**
+#-keep class org.apache.http.**
+#
+#-keep interface org.apache.http.**
 
 -dontwarn com.squareup.okhttp.**
 -dontwarn java.awt.**
 -dontwarn java.beans.Beans
 -dontwarn javax.security.**
--keep class javamail.** {*;}
--keep class javax.mail.** {*;}
--keep class javax.activation.** {*;}
--keep class com.sun.mail.dsn.** {*;}
--keep class com.sun.mail.handlers.** {*;}
--keep class com.sun.mail.smtp.** {*;}
--keep class com.sun.mail.util.** {*;}
--keep class mailcap.** {*;}
--keep class mimetypes.** {*;}
--keep class myjava.awt.datatransfer.** {*;}
--keep class org.apache.harmony.awt.** {*;}
--keep class org.apache.harmony.misc.** {*;}
+#-keep class javamail.** {*;}
+#-keep class javax.mail.** {*;}
+#-keep class javax.activation.** {*;}
+#-keep class com.sun.mail.dsn.** {*;}
+#-keep class com.sun.mail.handlers.** {*;}
+#-keep class com.sun.mail.smtp.** {*;}
+#-keep class com.sun.mail.util.** {*;}
+#-keep class mailcap.** {*;}
+#-keep class mimetypes.** {*;}
+#-keep class myjava.awt.datatransfer.** {*;}
+#-keep class org.apache.harmony.awt.** {*;}
+#-keep class org.apache.harmony.misc.** {*;}
 -keep class butterknife.*
 -keepclasseswithmembernames class * { @butterknife.* <methods>; }
 -keepclasseswithmembernames class * { @butterknife.* <fields>; }
@@ -61,11 +61,11 @@
 -keep class com.beingdev.magicprint.prodcutscategory.Cards$* { *; }
 -keep class com.beingdev.magicprint.prodcutscategory.Keychains$* { *; }
 -keep class com.beingdev.magicprint.prodcutscategory.Stationary$* { *; }
--keep class com.beingdev.magicprint.prodcutscategory.Tshirts$* { *; }
+#-keep class com.beingdev.magicprint.prodcutscategory.Tshirts$* { *; }
 
 -keep class com.beingdev.magicprint.prodcutscategory.Bags** { *; }
 -keep class com.beingdev.magicprint.prodcutscategory.Calendars** { *; }
 -keep class com.beingdev.magicprint.prodcutscategory.Cards** { *; }
 -keep class com.beingdev.magicprint.prodcutscategory.Keychains** { *; }
 -keep class com.beingdev.magicprint.prodcutscategory.Stationary** { *; }
--keep class com.beingdev.magicprint.prodcutscategory.Tshirts** { *; }
+#-keep class com.beingdev.magicprint.prodcutscategory.Tshirts** { *; }

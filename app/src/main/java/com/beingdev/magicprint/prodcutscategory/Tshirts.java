@@ -2,10 +2,12 @@ package com.beingdev.magicprint.prodcutscategory;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,8 +21,11 @@ import com.beingdev.magicprint.R;
 import com.beingdev.magicprint.models.GenericProductModel;
 import com.beingdev.magicprint.networksync.CheckInternetConnection;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -69,9 +74,10 @@ public class Tshirts extends AppCompatActivity {
         mLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-//        GenericProductModel g = new GenericProductModel(1,"T-shirt","","",100);
+        Log.d("sarath", "onCreate: " + mDatabaseReference.child("Products"));
+        Log.d("sarath", "onCreate: " + mDatabaseReference.child("Products").child("Tshirt"));
         //Say Hello to our new FirebaseUI android Element, i.e., FirebaseRecyclerAdapter
-        final FirebaseRecyclerAdapter<GenericProductModel,Cards.MovieViewHolder> adapter = new FirebaseRecyclerAdapter<GenericProductModel, Cards.MovieViewHolder>(
+        final FirebaseRecyclerAdapter<GenericProductModel, Cards.MovieViewHolder> adapter = new FirebaseRecyclerAdapter<GenericProductModel, Cards.MovieViewHolder>(
                 GenericProductModel.class,
                 R.layout.cards_cardview_layout,
                 Cards.MovieViewHolder.class,
@@ -84,7 +90,7 @@ public class Tshirts extends AppCompatActivity {
                     tv_no_item.setVisibility(View.GONE);
                 }
                 viewHolder.cardname.setText(model.getCardname());
-                viewHolder.cardprice.setText("₹ "+Float.toString(model.getCardprice()));
+                viewHolder.cardprice.setText("₹ " + model.getCardprice());
                 Picasso.with(Tshirts.this).load(model.getCardimage()).into(viewHolder.cardimage);
 
                 viewHolder.mView.setOnClickListener(new View.OnClickListener() {
@@ -99,19 +105,45 @@ public class Tshirts extends AppCompatActivity {
         };
 
 
-
         mRecyclerView.setAdapter(adapter);
 
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mDatabaseReference = mDatabaseReference.child("Products").child("Tshirt");
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    String text = ds.child("cardname").getValue(String.class);
+                    String text1 = ds.child("cardimage").getValue(String.class);
+                    String text2 = ds.child("carddiscription").getValue(String.class);
+
+                    Log.d("sarath", text1 + " / " + text + " / " + text2);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+
+        };
+        mDatabaseReference.addListenerForSingleValueEvent(eventListener);
+    }
+
     public void viewCart(View view) {
-        startActivity(new Intent(Tshirts.this,Cart.class));
+        startActivity(new Intent(Tshirts.this, Cart.class));
         finish();
     }
 
 
     //viewHolder for our Firebase UI
-    public static class MovieViewHolder extends RecyclerView.ViewHolder{
+    public static class MovieViewHolder extends RecyclerView.ViewHolder {
 
         TextView cardname;
         ImageView cardimage;

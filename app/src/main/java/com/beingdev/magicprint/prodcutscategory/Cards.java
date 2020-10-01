@@ -79,12 +79,12 @@ public class Cards extends AppCompatActivity {
                 if (tv_no_item.getVisibility() == View.VISIBLE) {
                     tv_no_item.setVisibility(View.GONE);
                 }
-                model.setCardid(1);
+               /* model.setCardid(1);
                 model.setCardname("T-shirt");
                 model.setCarddiscription("Cotton T-shirt with full hand");
                 model.setCardprice(100);
-                viewHolder.cardname.setText(model.getCardname());
-                viewHolder.cardprice.setText("₹ " + Float.toString(model.getCardprice()));
+                viewHolder.cardname.setText(model.getCardname());*/
+                viewHolder.cardprice.setText("₹ " + model.getCardprice());
                 Picasso.with(Cards.this).load(model.getCardimage()).into(viewHolder.cardimage);
 
                 viewHolder.mView.setOnClickListener(new View.OnClickListener() {
